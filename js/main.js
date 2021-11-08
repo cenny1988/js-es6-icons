@@ -131,3 +131,30 @@ const icons = [
 		color: 'blue'
 	}
 ];
+
+/*
+Milestone 1
+Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
+*/
+
+const containerIcons = document.getElementById('container-icons');
+createIcons();
+
+//icons.forEach(icon => console.log(icon));
+// FUNZIONI
+function createIcons(){
+    let newIcon="";
+    icons.forEach((icon) => {
+        const divIcon = document.createElement('div');
+        divIcon.classList.add('icon');
+        const {name, prefix, type, family, color} = icon;
+        
+        newIcon = `
+            <i class="${family} ${prefix}${name}"></i>
+            <span>${name}</span>
+        `;
+    
+        divIcon.innerHTML = newIcon;
+        containerIcons.append(divIcon);
+    });
+}
