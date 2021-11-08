@@ -144,6 +144,13 @@ iconsSelect.addEventListener('change', () => {
 	// 	console.log(choice);
 	// }
 	console.log(iconsSelect.value);
+	icons.filter((icon)=>{
+		const {name, prefix, type, family, color} = icon;
+		if(type === 'animal'){
+			console.log(icon);
+		}
+	}
+	);
 
 })
 
