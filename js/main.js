@@ -1,7 +1,6 @@
 /*
 Milestone 1
-Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
-Milestone 2
+Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’Milestone 2
 Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 Consigli del giorno
 Come sempre, iniziamo prima di tutto dall’analisi e comprensione della consegna.
@@ -10,7 +9,8 @@ Le icone presenti nella struttura dati fanno riferimento alla nota libreria Font
 Dopodiché, basandoci sul codice di riferimento nel sito di Font Awesome, analizziamo come è formato il tag <i> di un’icona qualsiasi, in particolare focalizziamoci sulle classi.
 Come possiamo usare i dati presenti nella nostra struttura dati per creare l’elemento html nel modo corretto e visualizzare l’icona in pagina?
 Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno stile, con all’interno l’icona e uno span con il nome.
-Solamente quando la parte logica è completa, ci dedichiamo al dettaglio del css.
+Solamente quando la parte logica è completa, ci dedichiamo al dettaglio del css.icona stessa.
+
 Bonus:
 Milestone 3
 Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
@@ -138,9 +138,26 @@ Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni ic
 */
 
 const containerIcons = document.getElementById('container-icons');
+
 createIcons();
 
-//icons.forEach(icon => console.log(icon));
+/*
+Milestone 2
+Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
+*/
+icons.forEach((icon) => {
+    // //se il valore di type è .. allora color è.. NB user-->blue; vegetable-->green; animal-->orange;
+    if (icon.type === 'user'){
+        document.querySelector('.icon').childNodes[1].style.color = `${color}`;
+
+    // } else if (type === 'vegetable'){
+    //     document.querySelector('.icon').childNodes[1].style.color ;
+    // } else if (type === 'animal'){
+    //     document.querySelector('.icon').childNodes[1].style.color ;
+    }
+});
+
+
 // FUNZIONI
 function createIcons(){
     let newIcon="";
@@ -158,3 +175,4 @@ function createIcons(){
         containerIcons.append(divIcon);
     });
 }
+
