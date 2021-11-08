@@ -160,7 +160,7 @@ function createIcons(){
         `;
 
         if (type === 'user'){
-            console.log(document.querySelector('.icon').childNodes[1].style.color); /*= `${color}`;*/
+            document.querySelector('.icon>i').classList.add('blue'); /*= `${color}`;*/
     
         // } else if (type === 'vegetable'){
         //     document.querySelector('.icon').childNodes[1].style.color ;
