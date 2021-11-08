@@ -139,22 +139,20 @@ createIcons();
 
 // se seleziono animal/vegetable/user --- > filtro e visualizzo in pagina solo la selezione
 iconsSelect.addEventListener('change', () => {
-	
-	//console.log(iconsSelect.value);
-	//const {name, prefix, type, family, color} = icons;
-	const animal = icons.filter(icon => icon.type === 'animal');
-	console.log(animal);
-	const vegetable = icons.filter(icon => icon.type === 'vegetable');
-	console.log(vegetable);
-	const user = icons.filter(icon => icon.type === 'user');
-	console.log(user);
+	console.log('You selected: ', iconsSelect.value);
+	const animals = icons.filter(icon => icon.type === 'animal');
+	//console.log(animals);
+	const vegetables = icons.filter(icon => icon.type === 'vegetable');
+	//console.log(vegetables);
+	const users = icons.filter(icon => icon.type === 'user');
+	//console.log(users);
 
-	if(iconsSelect.value === 'Animal'){
-		console.log(animal);
-	}else if(iconsSelect.value === 'Vegetable'){
-		console.log(vegetable);
-	}else if(iconsSelect.value === 'User'){
-		console.log(user);
+	if(iconsSelect.value === 'animal'){
+		console.log(animals);
+	}else if(iconsSelect.value === 'vegetable'){
+		console.log(vegetables);
+	}else if(iconsSelect.value === 'user'){
+		console.log(users);
 	}
 
 });
