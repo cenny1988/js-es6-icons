@@ -19,3 +19,13 @@ span{
 .orange i {
     color: orange;
 }
+
+label {
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}

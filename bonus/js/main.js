@@ -133,8 +133,19 @@ const icons = [
 ];
 
 const containerIcons = document.getElementById('container-icons');
+const iconsSelect = document.getElementById('icons-select');
 
 createIcons();
+
+// se seleziono animal/vegetable/user --- > filtro e visualizzo in pagina solo la selezione
+iconsSelect.addEventListener('change', () => {
+	// if(iconsSelect.value === 'Animal'){
+	// 	let choice = iconsSelect.value;
+	// 	console.log(choice);
+	// }
+	console.log(iconsSelect.value);
+
+})
 
 // FUNZIONI
 function createIcons(){
