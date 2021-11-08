@@ -145,18 +145,6 @@ createIcons();
 Milestone 2
 Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 */
-icons.forEach((icon) => {
-    // //se il valore di type è .. allora color è.. NB user-->blue; vegetable-->green; animal-->orange;
-    if (icon.type === 'user'){
-        document.querySelector('.icon').childNodes[1].style.color = `${color}`;
-
-    // } else if (type === 'vegetable'){
-    //     document.querySelector('.icon').childNodes[1].style.color ;
-    // } else if (type === 'animal'){
-    //     document.querySelector('.icon').childNodes[1].style.color ;
-    }
-});
-
 
 // FUNZIONI
 function createIcons(){
@@ -170,6 +158,15 @@ function createIcons(){
             <i class="${family} ${prefix}${name}"></i>
             <span>${name}</span>
         `;
+
+        if (type === 'user'){
+            console.log(document.querySelector('.icon').childNodes[1].style.color); /*= `${color}`;*/
+    
+        // } else if (type === 'vegetable'){
+        //     document.querySelector('.icon').childNodes[1].style.color ;
+        // } else if (type === 'animal'){
+        //     document.querySelector('.icon').childNodes[1].style.color ;
+        }
     
         divIcon.innerHTML = newIcon;
         containerIcons.append(divIcon);
