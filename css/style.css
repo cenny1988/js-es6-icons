@@ -10,12 +10,12 @@
 span{
     text-transform: uppercase;
 }
-.blue{
+.blue i {
     color: blue;
 }
-.green{
+.green i {
     color: green;
 }
-.orange{
+.orange i {
     color: orange;
 }

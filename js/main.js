@@ -132,41 +132,23 @@ const icons = [
 	}
 ];
 
-/*
-Milestone 1
-Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
-*/
-
 const containerIcons = document.getElementById('container-icons');
 
 createIcons();
-
-/*
-Milestone 2
-Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
-*/
 
 // FUNZIONI
 function createIcons(){
     let newIcon="";
     icons.forEach((icon) => {
-        const divIcon = document.createElement('div');
-        divIcon.classList.add('icon');
         const {name, prefix, type, family, color} = icon;
+
+        const divIcon = document.createElement('div');
+        divIcon.classList.add('icon',color);
         
         newIcon = `
             <i class="${family} ${prefix}${name}"></i>
             <span>${name}</span>
         `;
-
-        if (type === 'user'){
-            document.querySelector('.icon>i').classList.add('blue'); /*= `${color}`;*/
-    
-        // } else if (type === 'vegetable'){
-        //     document.querySelector('.icon').childNodes[1].style.color ;
-        // } else if (type === 'animal'){
-        //     document.querySelector('.icon').childNodes[1].style.color ;
-        }
     
         divIcon.innerHTML = newIcon;
         containerIcons.append(divIcon);
