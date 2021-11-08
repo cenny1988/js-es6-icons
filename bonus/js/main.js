@@ -141,27 +141,22 @@ createIcons(icons);
 iconsSelect.addEventListener('change', () => {
 	console.log('You selected: ', iconsSelect.value);
 	const animals = icons.filter(icon => icon.type === 'animal');
-	//console.log(animals);
 	const vegetables = icons.filter(icon => icon.type === 'vegetable');
-	//console.log(vegetables);
 	const users = icons.filter(icon => icon.type === 'user');
-	//console.log(users);
 
 	if(iconsSelect.value === 'animal'){
-		containerIcons.innerHTML = '';
 		createIcons(animals);
 	}else if(iconsSelect.value === 'vegetable'){
-		containerIcons.innerHTML = '';
 		createIcons(vegetables);
 	}else if(iconsSelect.value === 'user'){
-		containerIcons.innerHTML = '';
 		createIcons(users);
-	}
+	}else createIcons(icons);
 
 });
 
 // FUNZIONI
 function createIcons(arrObj){
+	containerIcons.innerHTML = '';
     let newIcon="";
     arrObj.forEach((icon) => {
         const {name, prefix, type, family, color} = icon;
