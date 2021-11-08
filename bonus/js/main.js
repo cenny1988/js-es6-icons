@@ -135,7 +135,7 @@ const icons = [
 const containerIcons = document.getElementById('container-icons');
 const iconsSelect = document.getElementById('icons-select');
 
-createIcons();
+createIcons(icons);
 
 // se seleziono animal/vegetable/user --- > filtro e visualizzo in pagina solo la selezione
 iconsSelect.addEventListener('change', () => {
@@ -148,19 +148,22 @@ iconsSelect.addEventListener('change', () => {
 	//console.log(users);
 
 	if(iconsSelect.value === 'animal'){
-		console.log(animals);
+		containerIcons.innerHTML = '';
+		createIcons(animals);
 	}else if(iconsSelect.value === 'vegetable'){
-		console.log(vegetables);
+		containerIcons.innerHTML = '';
+		createIcons(vegetables);
 	}else if(iconsSelect.value === 'user'){
-		console.log(users);
+		containerIcons.innerHTML = '';
+		createIcons(users);
 	}
 
 });
 
 // FUNZIONI
-function createIcons(){
+function createIcons(arrObj){
     let newIcon="";
-    icons.forEach((icon) => {
+    arrObj.forEach((icon) => {
         const {name, prefix, type, family, color} = icon;
 
         const divIcon = document.createElement('div');
@@ -174,5 +177,6 @@ function createIcons(){
         divIcon.innerHTML = newIcon;
         containerIcons.append(divIcon);
     });
+	return containerIcons
 }
 
